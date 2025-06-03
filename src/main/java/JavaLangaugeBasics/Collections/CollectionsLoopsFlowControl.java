@@ -1,4 +1,4 @@
-package JavaLangaugeBasics;
+package JavaLangaugeBasics.Collections;
 
 import java.util.ArrayList;
 import java.util.List;
