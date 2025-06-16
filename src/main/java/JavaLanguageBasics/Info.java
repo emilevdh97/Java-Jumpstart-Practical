@@ -11,5 +11,5 @@ import java.lang.annotation.Target;
  public @interface Info {
     String author();
     String date();
-    String description();
+    String description() default ""; // Now optional
 }
