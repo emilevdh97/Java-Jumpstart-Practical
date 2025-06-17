@@ -1,4 +1,4 @@
-package loggingAndExceptionHandling;
+package ExceptionHandlingAndLogging;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -25,10 +25,6 @@ public class AnimalReader {
     }
 
     private static int readInteger(String value) {
-        try {
-            return Integer.parseInt(value);
-        } catch (NumberFormatException e) {
-            return 0;
-        }
+        return Integer.parseInt(value);
     }
 }

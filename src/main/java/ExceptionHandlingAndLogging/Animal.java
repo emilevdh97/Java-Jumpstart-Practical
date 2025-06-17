@@ -1,4 +1,4 @@
-package loggingAndExceptionHandling;
+package ExceptionHandlingAndLogging;
 /**
  * Do not change this class
  * */
