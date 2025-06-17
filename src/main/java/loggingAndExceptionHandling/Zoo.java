@@ -3,64 +3,40 @@ package loggingAndExceptionHandling;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import static loggingAndExceptionHandling.AnimalReader.animalsReader;
 
 public class Zoo {
     private static final Logger logger = LoggerFactory.getLogger(Zoo.class);
-    private static final File file = new File("src/main/java/loggingAndExceptionHandling/animals.csv");
+    private static final File file = new File("src/main/resources/animals.csv");
 
     public static void main(String[] args) {
+        List<Animal> animals;
         try {
-            List<Animal> animals = readAnimals(file);
-            animals.set(3, null);
-            int numberOfAnimals = animals.size();
-            for (int index = 0; index < numberOfAnimals; index++) {
-                logger.info("Animal {}", animals.get(index));
-            }
-        } catch (IOException exception) {
-            logger.error("Could not read animals file", exception);
+            animals = new ArrayList<>(readAnimals());
+        } catch (IOException e) {
+            logger.error("Something went wrong with reading the file ", e);
+            animals = List.of();
+        } catch (Exception e) {
+            logger.error("Something went wrong", e);
+            animals = List.of();
+        }
+        for (Animal animal : animals) {
+            logger.info("Animal {}", animal);
         }
     }
 
-    private static List<Animal> readAnimals(File file) throws IOException {
-        FileReader fileReader = new FileReader(file);
-        return animalsReader(fileReader);
-    }
-
-    private static List<Animal> readAnimalsWithResources(File file) {
-        try(FileReader fileReader = new FileReader(file)){
+    private static List<Animal> readAnimals() throws IOException {
+        try (FileReader fileReader = new FileReader(file)) {
             return animalsReader(fileReader);
         } catch (FileNotFoundException e) {
-            throw new ZooAnimalsFileNotFound("Could not find animals file: " + file, e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new AnimalsFileNotFoundException("Could not locate the file to read", e);
         }
-    }
-
-    private static List<Animal> readAnimalsWithFinallyGotcha(File file) {
-        try(FileReader fileReader = new FileReader(file)){
-            return animalsReader(fileReader);
-        } catch (FileNotFoundException e) {
-            throw new ZooAnimalsFileNotFound("Could not find animals file: " + file, e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            return Collections.emptyList();
-        }
-    }
-
-    private static List<Animal> animalsReader(FileReader fileReader) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        ArrayList<Animal> animals = new ArrayList<>();
-        String line = bufferedReader.readLine();
-        while(line != null) {
-            String[] split = line.split(",");
-            animals.add(new Animal(split[0], split[1], Integer.parseInt(split[2]), split[3]));
-            line = bufferedReader.readLine();
-        }
-        return animals;
     }
 }

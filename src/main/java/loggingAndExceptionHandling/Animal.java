@@ -1,5 +1,7 @@
 package loggingAndExceptionHandling;
-
+/**
+ * Do not change this class
+ * */
 public class Animal {
     private final String name;
     private final String species;
