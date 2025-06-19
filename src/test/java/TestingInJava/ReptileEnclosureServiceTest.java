@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
@@ -16,7 +17,7 @@ import static org.mockito.Mockito.*;
 //@ExtendWith(MockitoExtension.class)
 class ReptileEnclosureServiceTest {
 
-    //TODO: 2. Change Junit test to use hamcrest
+    //TODO: ✅ 2. Change Junit test to use hamcrest
     @Test
     @DisplayName("Get temperature for first enclosure")
     void getTemperature() {
@@ -32,7 +33,8 @@ class ReptileEnclosureServiceTest {
                 LocalDateTime.parse("2025-06-02T19:00:00"));
 
         //THEN
-        assertEquals(27.54, result.getFirst());
+        assertThat(result.getFirst(), is(27.54));
+
     }
 
     //TODO: 3. Test ALL Temperatures for enclosure 3 in the same test
