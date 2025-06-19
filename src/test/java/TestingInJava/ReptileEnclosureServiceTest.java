@@ -114,7 +114,7 @@ class ReptileEnclosureServiceTest {
     }
 
 
-    //TODO: 7. Create a SPY for databaseService called "spyDatabaseService" (Can be in line)
+    //TODO: ✅ 7. Create a SPY for databaseService called "spyDatabaseService" (Can be in line)
     //         Hint: Look at Mock
     @Test
     @DisplayName("Staff member with ID 11 is able to check in")
@@ -123,8 +123,8 @@ class ReptileEnclosureServiceTest {
         //GIVEN with SPY
         DatabaseService databaseService = new DatabaseService();
         //Create Spy here then uncomment code
+        DatabaseService spyDatabaseService = spy(databaseService);
 
-/*
         // == UNCOMMENT ==
         ReptileEnclosureService enclosureService = new ReptileEnclosureService(spyDatabaseService);
 
@@ -139,8 +139,6 @@ class ReptileEnclosureServiceTest {
         assertThat(spyDatabaseService.dailyLog.getLast().StaffId(), is("11"));
 
         // == END_UNCOMMENT ==
-*/
-
 
     }
 
