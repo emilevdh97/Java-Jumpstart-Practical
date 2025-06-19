@@ -21,7 +21,7 @@ public class ReptileEnclosureService {
 
 
     //TODO: ✅ 2. Change Junit test to use hamcrest
-    //TODO: 3. Test ALL Temperatures for enclosure 3 in the same test
+    //TODO: ✅ 3. Test ALL Temperatures for enclosure 3 in the same test
     //         HINT Try @ParameterisedTest ! Temperatures are 29.56, 23.56, 26.56
 
     /**

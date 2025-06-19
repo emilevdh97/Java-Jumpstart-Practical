@@ -2,6 +2,8 @@ package TestingInJava;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -37,11 +39,12 @@ class ReptileEnclosureServiceTest {
 
     }
 
-    //TODO: 3. Test ALL Temperatures for enclosure 3 in the same test
+    //TODO: ✅ 3. Test ALL Temperatures for enclosure 3 in the same test
     //         HINT Try @ParameterisedTest ! Temperatures are 29.56, 23.56, 26.56
-    @Test
+    @ParameterizedTest
+    @ValueSource(doubles = {29.56, 23.56, 26.56})
     @DisplayName("Get Temperatures for enclosure 3")
-    void getTemperatures() {
+    void getTemperatures(double temperature) {
 
         //GIVEN - Concrete Implementation
         DatabaseService databaseService = new DatabaseService();
@@ -54,8 +57,8 @@ class ReptileEnclosureServiceTest {
                 LocalDateTime.parse("2025-06-09T19:00:00"));
 
         //THEN
-        //Hint: change "Matcher" parameter
-        assertThat(result, hasItem(29.56));
+        //Hint: change "Matcher" value
+        assertThat(result, hasItem(temperature));
     }
 
 
