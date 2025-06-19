@@ -1,5 +1,6 @@
 package TestingInJava;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +8,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-//TODO: 6. Run All test Successfully
+//TODO: ✅ 6. Run All test Successfully
 //         why is only one test passing?
 //         Hint: Look at the test lifecycle 🔁
 
@@ -18,8 +19,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ReptileEnclosureServiceDeleteTest {
 
     //We only want to create one instance
-    static DatabaseService databaseService = new DatabaseService();
-    static ReptileEnclosureService enclosureService = new ReptileEnclosureService(databaseService);
+    static DatabaseService databaseService;
+    static ReptileEnclosureService enclosureService;
+
+    @BeforeEach
+    void setUp() {
+        databaseService = new DatabaseService();
+        enclosureService = new ReptileEnclosureService(databaseService);
+    }
 
     @Test
     @DisplayName("Delete logs before the 9th at 8h00, expected 0 logs left")
