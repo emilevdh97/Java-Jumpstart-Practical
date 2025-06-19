@@ -15,7 +15,6 @@ import java.util.Optional;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
@@ -74,7 +73,7 @@ class ReptileEnclosureServiceTest {
     //         Hint: @Mock - Remember to uncomment the extension ☝️
     //               Bonus - Use @InjectMock()
 
-    //TODO: 5. Change the assert to make the test pass
+    //TODO: ✅ 5. Change the assert to make the test pass
     //         Hint: Look at the test result
     //               Bonus - can you solve it with Hamcrest?
     @Test
@@ -111,7 +110,7 @@ class ReptileEnclosureServiceTest {
                         "0",
                         LocalDateTime.of(2025, 6, 9, 9, 30));
         //THEN
-        assertEquals("", result.getMessage());
+        assertThat(result.getMessage(), is("Time stamp does not exist"));
     }
 
 

@@ -48,7 +48,7 @@ public class ReptileEnclosureService {
     //         Hint: @Mock - Remember to uncomment the extension ☝️
     //               Bonus - Use @InjectMock()
 
-    //TODO: 5. Change the assert to make the test pass
+    //TODO: ✅ 5. Change the assert to make the test pass
     //         Hint: Look at the test result
     //               Bonus - can you solve it with Hamcrest?
 
