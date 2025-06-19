@@ -2,8 +2,12 @@ package TestingInJava;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -15,9 +19,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
-//TODO: Uncomment when needed
-//@ExtendWith(MockitoExtension.class)
+//TODO: ✅ Uncomment when needed
+@ExtendWith(MockitoExtension.class)
 class ReptileEnclosureServiceTest {
+
+    @Mock
+    DatabaseService mockDatabaseService;
+    @InjectMocks
+    ReptileEnclosureService enclosureService;
 
     //TODO: ✅ 2. Change Junit test to use hamcrest
     @Test
@@ -61,8 +70,7 @@ class ReptileEnclosureServiceTest {
         assertThat(result, hasItem(temperature));
     }
 
-
-    //TODO: 4. Register mockDatabaseService as a global mocks
+    //TODO: ✅ 4. Register mockDatabaseService as a global mocks
     //         Hint: @Mock - Remember to uncomment the extension ☝️
     //               Bonus - Use @InjectMock()
 
@@ -74,8 +82,10 @@ class ReptileEnclosureServiceTest {
     void swapStaffLog() {
 
         //GIVEN - with MOCK
+     /*
         DatabaseService mockDatabaseService = mock(DatabaseService.class);
         ReptileEnclosureService enclosureService = new ReptileEnclosureService(mockDatabaseService);
+     */
 
         //WHEN - STUB
         when(mockDatabaseService
@@ -83,8 +93,7 @@ class ReptileEnclosureServiceTest {
                         "5",
                         "0",
                         LocalDateTime.of(2025, 6, 9, 9, 30))
-        )
-                .thenReturn(Optional.empty());
+        ).thenReturn(Optional.empty());
 
         //Assert that an exception has been thrown!
         var result = assertThrows(RuntimeException.class, () ->
