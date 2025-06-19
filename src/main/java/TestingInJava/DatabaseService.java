@@ -8,19 +8,24 @@ import java.util.Optional;
 
 public class DatabaseService implements IDatabaseService {
 
-    //Database
+    //✌️ Database ✌️
     public ArrayList<Log> dailyLog = new ArrayList<>(Arrays.asList(
+            // The 2nd of JUNE
             new Log(LocalDateTime.of(2025, 6, 2, 8, 0), "2", "3", 32.00),
             new Log(LocalDateTime.of(2025, 6, 2, 8, 0), "6", "4", 22.00),
             new Log(LocalDateTime.of(2025, 6, 2, 8, 30), "0", "4", 27.54),
             new Log(LocalDateTime.of(2025, 6, 2, 8, 30), "6", "4", 21.01),
             new Log(LocalDateTime.of(2025, 6, 2, 9, 0), "0", "5", 31.32),
+
+            // The 3rd of JUNE
             new Log(LocalDateTime.of(2025, 6, 3, 8, 30), "6", "4", 24.00),
-            new Log(LocalDateTime.of(2025, 6, 3, 8, 30), "6", "4", 24.00),
-            new Log(LocalDateTime.of(2025, 6, 3, 8, 30), "6", "4", 24.00),
-            new Log(LocalDateTime.of(2025, 6, 9, 9, 30), "0", "6", 29.56),
-            new Log(LocalDateTime.of(2025, 6, 9, 9, 30), "0", "6", 29.56),
-            new Log(LocalDateTime.of(2025, 6, 9, 9, 30), "0", "6", 29.56)
+            new Log(LocalDateTime.of(2025, 6, 3, 9, 30), "6", "4", 24.00),
+            new Log(LocalDateTime.of(2025, 6, 3, 10, 30), "6", "4", 24.00),
+
+            // The 9th of JUNE
+            new Log(LocalDateTime.of(2025, 6, 9, 9, 30), "3", "6", 29.56),
+            new Log(LocalDateTime.of(2025, 6, 9, 9, 30), "3", "6", 23.56),
+            new Log(LocalDateTime.of(2025, 6, 9, 9, 30), "3", "6", 26.56)
     ));
 
     @Override

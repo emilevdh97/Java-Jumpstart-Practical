@@ -15,6 +15,7 @@
     </properties>
 
     <dependencyManagement>
+        <!-- TESTING_IN_JAVA DEPENDENCIES START-->
         <dependencies>
             <dependency>
                 <!-- Recommended to use the BOM,
@@ -27,6 +28,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
+        <!-- TESTING_IN_JAVA DEPENDENCIES START-->
     </dependencyManagement>
 
 
@@ -40,10 +42,12 @@
         <!-- TESTING_IN_JAVA DEPENDENCIES START-->
         <dependency>
             <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.13.1 -->
+            <!-- Required For Annotations and Assertions -->
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
         </dependency>
         <dependency>
+            <!-- Required For Parameterised Tests -->
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <scope>test</scope>
