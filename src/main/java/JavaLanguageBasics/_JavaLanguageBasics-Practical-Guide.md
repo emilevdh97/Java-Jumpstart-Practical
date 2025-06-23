@@ -1,4 +1,4 @@
-# Java Jumpstart Practical Guide
+# Java Language Basics Practical Guide
 
 # Step 1: Understand the Goal
 
