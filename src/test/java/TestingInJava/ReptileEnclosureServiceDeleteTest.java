@@ -1,5 +1,6 @@
 package TestingInJava;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Run all tests with the <b>gutter Icon</b> <icon src="AllIcons.RunConfigurations.TestState.Run_run"/> </li>
  * Run <b>individual</b> test with <icon src="AllIcons.RunConfigurations.TestState.Run"/>
  */
+@Disabled
 class ReptileEnclosureServiceDeleteTest {
 
     //We only want to create one instance

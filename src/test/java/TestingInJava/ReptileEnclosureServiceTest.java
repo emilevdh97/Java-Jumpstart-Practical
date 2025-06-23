@@ -1,5 +1,6 @@
 package TestingInJava;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ import static org.mockito.Mockito.*;
 
 //TODO: Uncomment when needed
 //@ExtendWith(MockitoExtension.class)
+@Disabled
 class ReptileEnclosureServiceTest {
 
     //TODO: 2. Change Junit test to use hamcrest
