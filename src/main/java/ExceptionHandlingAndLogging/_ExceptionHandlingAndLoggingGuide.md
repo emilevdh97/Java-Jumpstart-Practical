@@ -47,7 +47,7 @@
  *_Error occurred while trying to open the animal file!_*.
 - After the log message, throw a new `RuntimeException` and pass the cause of the exception. 
 
-# Step 4: Custom Exception
+## Step 4: Custom Exception
 
 - Create a new exception class called the `AnimalFileNotFoundException` inside the `ExceptionHandlingAndLogging` package. 
  The exception should extend the `RuntimeException`.
