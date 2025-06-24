@@ -31,7 +31,7 @@ public class ZooFeeding {
 
     //TODO: 4. Create a synchronized method or use
     // synchronized block to safely decrement the food supply
-    public static void feedAnimal(String animal, double timeToFeed) {
+    public static void feedAnimal(String animal, int timeToFeed) {
 
     }
 
