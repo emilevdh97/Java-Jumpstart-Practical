@@ -1,2 +1,0 @@
-# Advanced Topics Practical Activity
-
