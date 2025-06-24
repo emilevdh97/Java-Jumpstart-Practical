@@ -25,6 +25,10 @@ public class AnimalReader {
     }
 
     private static int readInteger(String value) {
-        return Integer.parseInt(value);
+        try {
+            return Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 }
