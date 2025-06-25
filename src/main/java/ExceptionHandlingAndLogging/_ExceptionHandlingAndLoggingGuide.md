@@ -43,6 +43,9 @@
 ## Step 3: Try with resources 
 
 - Surround the following line with a try with resources and return the method call to the `animalsReader()` method.
+```java
+    FileReader fileReader = new FileReader(file);
+```
 - Catch the `FileNotFoundException` and add error logger with the message and the cause. The message should read, 
  *_Error occurred while trying to open the animal file!_*.
 - After the log message, throw a new `RuntimeException` and pass the cause of the exception. 
