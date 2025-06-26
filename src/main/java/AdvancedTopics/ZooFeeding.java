@@ -17,10 +17,11 @@ public class ZooFeeding {
          */
 
         Runnable lionFeeder = () -> {
+//            For exercise 5, replace this code with the feedAnimal method call
+//            feedAnimal("Lions", 2000);
             System.out.println("Feeding the lions");
             try {
                 Thread.sleep(2000);
-//                feedAnimal("Lions", 2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -28,10 +29,10 @@ public class ZooFeeding {
         };
 
         Runnable giraffeFeeder = () -> {
+//          feedAnimal("Giraffes", 1500);
             System.out.println("Feeding the giraffes");
             try {
                 Thread.sleep(1500);
-//                feedAnimal("Giraffes", 1500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -39,10 +40,10 @@ public class ZooFeeding {
         };
 
         Runnable monkeyFeeder = () -> {
+//            feedAnimal("Monkeys", 1000);
             System.out.println("Feeding the monkeys");
             try {
                 Thread.sleep(1000);
-//                feedAnimal("Monkeys", 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -55,6 +56,7 @@ public class ZooFeeding {
         Thread monkeyFeederThread = new Thread(monkeyFeeder);
 
         //Todo: 3. Add .join() and notice how the order of feeding-completion changes
+//        Uncomment .join() and notice the behaviour change
         lionFeederThread.start();
 //        lionFeederThread.join();
         giraffeFeederThread.start();
